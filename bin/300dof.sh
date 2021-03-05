@@ -20,7 +20,7 @@ offset=11113
 echo -e "# 300 Days of Fractal\n" > 300DOF.md
 while IFS="" read -r url || [ -n "${url}" ]; do
   post_date=$(date --date "${start_date} ${days} day" +'%a %d/%m/%Y' | tr '[a-z]' '[A-Z]')
-  echo "- ${post_date} D${day} [✍](${url})" >> 300DOF.md
+  echo "- \`${post_date} D${day}\` [✍](${url})" >> 300DOF.md
   offset="${offset:1:5}${offset:0:1}"
   days=$((${days} + ${offset:0:1}))
   day=$((${day} + 1))
