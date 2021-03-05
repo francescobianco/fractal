@@ -23,6 +23,12 @@ while IFS="" read -r url || [ -n "${url}" ]; do
   tweet="Fractal"
   intent="https://twitter.com/intent/tweet?text=${tweet}&url=${url}"
   echo "- \`${post_date} D${day}\` [✍](${intent})" >> 300DOF.md
+  sed -e 's!%%VT_VERSION%%!'"${version}"'!' \
+    -e 's!%%VT_DOWNLOAD%%!'"${download}"'!' \
+    -e 's!%%VT_DIRECTORY%%!'"${directory}"'!' \
+    -e 's!%%DATABASE_PACKAGE%%!'"${database_package}"'!' \
+    -e 's!%%PHP_VERSION%%!'"${php_version}"'!' \
+    -r etc/300dof.tpl > post/300-days-of-fractal/day-${day}.html
   offset="${offset:1:5}${offset:0:1}"
   days=$((${days} + ${offset:0:1}))
   day=$((${day} + 1))
