@@ -12,8 +12,8 @@ echo "Pruning images..."
 sed -i '/\.\(png\|jpg\|jpeg\)$/I!d' etc/fractal.list
 sort -R --random-source etc/random etc/fractal.list
 
-echo "# 300 Days of Fractal" > 300DOF.md
-#while IFS="" read -r url || [ -n "${url}" ]; do
-#  echo "${url}"
-#done < etc/fractal.list
+echo -e "# 300 Days of Fractal\n" > 300DOF.md
+while IFS="" read -r url || [ -n "${url}" ]; do
+  echo "- [✍](${url})"  >> 300DOF.md
+done < etc/fractal.list
 
