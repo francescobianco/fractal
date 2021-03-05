@@ -18,12 +18,12 @@ day=1
 days=0
 offset=11113
 echo -e "# 300 Days of Fractal\n" > 300DOF.md
-while IFS="" read -r url || [ -n "${url}" ]; do
+while IFS="" read -r fractal_url || [ -n "${fractal_url}" ]; do
   post_date=$(date --date "${start_date} ${days} day" +'%a %d/%m/%Y' | tr '[a-z]' '[A-Z]')
   tweet="Fractal"
   intent="https://twitter.com/intent/tweet?text=${tweet}&url=${url}"
   echo "- \`${post_date} D${day}\` [✍](${intent})" >> 300DOF.md
-  sed -e 's!%%VT_VERSION%%!'"${version}"'!' \
+  sed -e 's!{fractal_url}!'"${fractal_url}"'!' \
     -e 's!%%VT_DOWNLOAD%%!'"${download}"'!' \
     -e 's!%%VT_DIRECTORY%%!'"${directory}"'!' \
     -e 's!%%DATABASE_PACKAGE%%!'"${database_package}"'!' \
