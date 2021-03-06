@@ -20,11 +20,11 @@
             <p class="card-text">
                 Thanks to
                 <a href="https://{domain}" target="_blank">
-                    {domain}
-                </a>
+                    {domain}</a>
                 for his amazing work
             </p>
-            <a href="https://twitter.com/francescobianco" class="btn btn-primary">Follow me @francescobianco</a>
+            <a href="https://twitter.com/share" class="small link-light twitter-share-button" data-show-count="false">Tweet</a>
+            <a href="https://twitter.com/francescobianco" class="small link-light twitter-follow-button" data-show-count="false">Follow @francescobianco</a><script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <img src="{fractal_url}" class="card-img-bottom" alt="...">
     </div>
